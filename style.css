@@ -135,8 +135,21 @@ nav {
     width: 100%;
     z-index: 1000;
     background-color: #0066CC;
+    padding: 10px 20px;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    width: 50px;
+    height: auto;
+}
 
 nav ul {
     display: flex;
@@ -144,9 +157,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     gap: 32px;
-    padding: 8px 32px;
-    justify-content: end;
-    position: relative;
+    padding: 0;
 }
 
 nav ul li {
