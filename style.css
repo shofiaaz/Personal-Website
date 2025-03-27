@@ -2,6 +2,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: #D0E7FF;
@@ -131,6 +135,13 @@ nav {
     width: 100%;
     z-index: 1000;
     background-color: #0066CC;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 nav ul {
