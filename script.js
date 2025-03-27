@@ -5,15 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
         const slider = sliderContainer.querySelector(".slider");
         const prevButton = sliderContainer.querySelector(".prev");
         const nextButton = sliderContainer.querySelector(".next");
+        const images = slider.querySelectorAll("img");
 
-        let scrollStep = slider.scrollWidth / slider.children.length; // Menggunakan scrollWidth untuk memastikan ukuran yang tepat
+        let currentIndex = 0;
+
+        function updateSliderPosition() {
+            slider.style.transform = `translateX(-${currentIndex * images[0].width}px)`;
+        }
 
         prevButton.addEventListener("click", function () {
-            slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSliderPosition();
+            }
         });
 
         nextButton.addEventListener("click", function () {
-            slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                updateSliderPosition();
+            }
+        });
+
+        images.forEach((img, index) => {
+            img.addEventListener("click", function () {
+                currentIndex = index;
+                updateSliderPosition();
+            });
         });
     });
 });
